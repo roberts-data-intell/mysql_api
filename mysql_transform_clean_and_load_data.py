@@ -2,7 +2,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 # Connect to MySQL Database
-DATABASE_URL = "mysql+mysqlconnector://root:T9r50wRgf44v@localhost/Sales_Project"
+DATABASE_URL = "mysql+mysqlconnector://root:XXXXXXXXXXXXX@localhost/Sales_Project"
 engine = create_engine(DATABASE_URL)
 
 # Define column data types for SQL database
