@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 # Connect to MySQL Database with connection pooling
-DATABASE_URL = "mysql+mysqlconnector://root:T9r50wRgf44v@localhost/Sales_Project"
+DATABASE_URL = "mysql+mysqlconnector://root:XXXXXXXXXXXXXXXXX@localhost/Sales_Project"
 engine = create_engine(DATABASE_URL, pool_size=10, max_overflow=20)
 
 # A utility function to run queries and fetch data
