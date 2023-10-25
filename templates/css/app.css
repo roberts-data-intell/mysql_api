@@ -1,0 +1,86 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+.custom-btn {
+    background-color: lightblue;
+    color: black;
+    border-radius: 25px;  /* Gives rounded edges */
+    border: none;         /* Removes the default border */
+    padding: 10px 20px;   /* Adjust padding as needed */
+    font-weight: bold;    /* Makes the text bold */
+    transition: 0.3s;     /* Smooth transition for hover effect */
+}
+
+.custom-btn:hover {
+    background-color: deepskyblue; /* Slightly darker blue on hover */
+    color: white;                 /* Change text color to white on hover */
+}
+
+
+.container {
+    max-width: 1100px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    margin-right: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+}
+
+table th, table td {
+    padding: 10px 15px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Responsive Design: Tablets and Phones */
+@media (max-width: 992px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header img {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    table th, table td {
+        padding: 8px 10px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2em;
+    }
+
+    header img {
+        width: 80px;
+    }
+}

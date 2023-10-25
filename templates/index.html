@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDI App</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-dark text-white p-3">
+        <div class="container d-flex justify-content-between align-items-center">
+             <!--<img src="img/rdi_logo2.png" alt="Roberts Data Intelligence Logo" width="100">-->
+            <h1 class="h4 mb-0">Roberts Data Intelligence</h1>
+        </div>
+    </header>
+
+    <!-- PDF Download Button 
+    <div class="text-center mt-3">
+        <a href="results.pdf" class="btn custom-btn" download="results.pdf">
+            Download Results as PDF
+        </a>
+    </div>-->
+
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Business Data Analysis</h1>
+    
+    <!-- Query 1: Top 10 Products -->
+    <h3>Top Products - Marketing vrs Profit</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Product Type</th>
+                <th>Total Marketing</th>
+                <th>Total Profit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data1 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Query 2: Market Expenses verse Profit -->
+    <h3 class="mt-5">Market - Expenses verse Profit</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Market</th>
+                <th>Total Profit</th>
+                <th>Total Marketing</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data2 %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+
+       <!-- Query 3: Market Data -->
+       <h2>Correlation - Total Expenses - Profit by Market Size</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Market Size</th>
+                    <th>Correlation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data3 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Query 4: Sales Growth by Product Type -->
+        <h2>Sales Growth by Product Type</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Product Type</th>
+                    <th>Sales Growth</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data4 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Query 5: Difference Between Actual and Budgeted COGS by State -->
+        <h2>Difference Between Actual and Budgeted COGS by State</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Difference in COGS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data5 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Query 6: Average Inventory by State and Product Type -->
+        <h2>Average Inventory by State and Product Type</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Product Type</th>
+                    <th>Average Inventory</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data6 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Query 7: Top 5 States by Maximum Sales -->
+        <h2>Top 5 States by Maximum Sales</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Maximum Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data7 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Query 8: Market Details -->
+        <h2>Market Details: Product with Highest Sales, Total Profit, and Total Expenses</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Market</th>
+                    <th>Product with Highest Sales</th>
+                    <th>Highest Sales</th>
+                    <th>Total Profit</th>
+                    <th>Total Expenses</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data8 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                        <td>{{ item[2] }}</td>
+                        <td>{{ item[3] }}</td>
+                        <td>{{ item[4] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Query 9: State-wise Max Profit -->
+        <h2>Maximum Profit by State</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Maximum Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data9 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+        <!-- Query 10: State-wise Min Profit -->
+        <h2>Minimum Profit by State</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Minimum Profit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data10 %}
+                    <tr>
+                        <td>{{ item[0] }}</td>
+                        <td>{{ item[1] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+    <!-- Close App Button -->
+    <div class="mt-5 text-center">
+        <button id="closeApp" class="btn btn-danger">Close App</button>
+    </div>
+</div>
+
+<!-- Include Bootstrap JS and its dependencies -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Your custom JavaScript can go here -->
+<script>
+    document.getElementById('closeApp').addEventListener('click', function() {
+        window.close();
+    });
+</script>
+</body>
+</html>
